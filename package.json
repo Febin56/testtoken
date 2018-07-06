@@ -7,6 +7,7 @@
     "test": "test"
   },
   "scripts": {
+    "dev": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +16,8 @@
   "dependencies": {
     "dotenv": "^6.0.0",
     "truffle-hdwallet-provider": "0.0.5",
-    "zeppelin-solidity": "1.10.0"
+    "web3": "^1.0.0-beta.34",
+    "zeppelin-solidity": "1.10.0",
+    "lite-server": "^2.3.0"
   }
 }
