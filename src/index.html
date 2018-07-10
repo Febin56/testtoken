@@ -2,9 +2,11 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>MatchBX</title>
 <style>
-table, td, th {    
+	
+	body {margin: 0; text-align: center;}	
+table, td, th {
     border: 1px solid #ddd;
     text-align: left;
 }
@@ -21,52 +23,113 @@ th, td {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+   padding: 15px 15px;
     text-align: center;
+    min-width: 168px;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
 }
 	input{border: 1px solid #ddd;
-    border-radius: 4px; padding: 5px 10px}
-</style>
-</head>
+    border-radius: 4px; padding: 6px 10px;
+	width: 100%;
+    max-width: 200px;
+    min-height: 20px;
+    margin: 0;
+    display: block;
+	}
+	.wraper {width: 100%; max-width: 800px; display: inline-block; margin: 0 auto; text-align: left; padding-bottom: 25px;}	
+	
+	.log_input {display: inline-block}
+	/*.log_input input {max-width: inherit;}*/
+	</style> </head>
 
 <body>
-<table width="600" border="1" cellspacing="0" cellpadding="0">
+<div class="wraper">
+<h3 style="text-align:
+center;">Escrow Testing</h3>
+<table width="" border="1" cellspacing="0" cellpadding="0">
+  <tbody>    
+    <tr>
+        <td width="35%"><input type="text" placeholder="Escrow Address"
+id="approveAddr"></td>
+        <td width="35%"><input type="text" placeholder="Token Amount"
+id="approveTokAmnt"></td>
+        <td width="30%"><button id="btn_approve" type="button"
+class="button">Approve</button></td>
+    </tr>    
+  </tbody>
+</table>
+<br />
+<br />
+<table width="" border="1" cellspacing="0" cellpadding="0">
   <tbody>
+    
     <tr>
-      <td colspan="4" align="center"><h3 style="text-align: center;">Escrow Testing</h3></td>
+      <td width="35%"><input type="text" placeholder="Sequence Number"
+id="step_id"></td>
+      <td width="35%"><input type="text" placeholder="From Address"
+id="fromAddr"></td>
+      <td rowspan="2" width="30%"><button id="btn_deposit" type="button"
+class="button">Deposit</button></td>
     </tr>
+    <tr>      
+      <td><input type="text" placeholder="To Address" id="toAddr"></td>
+      <td><input type="text" placeholder="Token Amount"
+id="tokAmnt"></td>
+    </tr>    
+  </tbody>
+</table>
+<br />
+<br />
+<table width="" border="1" cellspacing="0" cellpadding="0">
+  <tbody>    
     <tr>
-      <td><input type="text" id="step_id"></td>
-      <td><input type="text" id="fromAddr"></td>
-      <td><input type="text" id="toAddr"></td>
-      <td><input type="text" id="tokAmnt"></td>
-      <td><button id="btn_deposit" type="button" class="button">Deposit</button></td>
-    </tr>
+      <td width="70%"><div class="log_input">
+      <input type="text" placeholder="Sequence Number" id="step_pay"></div>
+      </td>
+      <td width="30%"><button id="btn_pay" type="button"
+class="button">Pay</button></td>      
+      
+    </tr>    
+  </tbody>
+</table>
+<br />
+<br />
+<table width="" border="1" cellspacing="0" cellpadding="0">
+  <tbody>    
     <tr>
-      <td><input type="text" id="step_pay"></td>
-      <td><button id="btn_pay" type="button" class="button">Pay</button></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td><input type="text" id="balAddr"></td>
-        <td><button id="btn_balance" type="button" class="button">BALANCE</button></td>
-        <td><label id="lbl_balance" for="">balance</label></td>
+        <td width="70%"><div class="log_input">
+        <input type="text" placeholder="Wallet Address"
+id="balAddr"></div>
+       </td>
+        <td width="30%"><button id="btn_balance" type="button"
+class="button">BALANCE</button>
+ <br />
+ <label id="lbl_balance" for="" style="padding-top: 5px;"></label>
+  </td>
    
-    </tr>
+    </tr>    
+  </tbody>
+</table>
+<br />
+<br />
+<table width="" border="1" cellspacing="0" cellpadding="0">
+  <tbody>    
     <tr>
-        <td><input type="text" id="step_rfd"></td>
-        <td><button id="btn_refund" type="button" class="button">REFUND</button></td>
+        <td width="70%"><div class="log_input">
+        <input type="text" placeholder="Sequence Number"
+id="step_rfd"></div>
+       </td>
+        <td width="30%"><button id="btn_refund" type="button"
+class="button">REFUND</button></td>
     </tr>
   </tbody>
 </table>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery
+.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed --> <script src="js/bootstrap.min.js"></script>
 <script src="js/web3.min.js"></script>
 <script src="js/truffle-contract.js"></script>
 <script src="js/app.js"></script>
